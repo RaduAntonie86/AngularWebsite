@@ -1,0 +1,18 @@
+<div class="p-3 divide-y divide-solid text-center flex flex-col items-center">
+    <mat-form-field class="mb-4">
+      <mat-label>Name</mat-label>
+      <input matInput #nameInput>
+    </mat-form-field>
+  
+    <mat-form-field class="mb-4">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" #passwordInput>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+  
+    <div>
+      <button mat-raised-button color="primary" class="text-center" (click)="login(nameInput.value, passwordInput.value)">Log In</button>
+    </div>
+  </div>

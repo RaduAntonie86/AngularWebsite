@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "proiect-web4",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

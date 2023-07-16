@@ -1,0 +1,34 @@
+<div class="p-3 divide-y divide-solid text-center flex flex-col items-center">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput #nameInput>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select #categoryInput>
+        <mat-option *ngFor="let category of productService.categories" [value]="category">{{category}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field class="mb-4">
+      <mat-label>Image Name</mat-label>
+      <input matInput #imageInput>
+    </mat-form-field>
+  
+    <mat-form-field class="mb-4">
+      <mat-label>Description (optional)</mat-label>
+      <input matInput #descriptionInput>
+    </mat-form-field>
+  
+    <mat-form-field floatLabel="always">
+      <mat-label>Cost</mat-label>
+      <input type="number" matInput #costInput class="example-right-align" placeholder="0">
+      <span matTextPrefix>$&nbsp;</span>
+      <span matTextSuffix>.00</span>
+    </mat-form-field>
+  
+    <div>
+      <button mat-raised-button color="primary" (click)="addProduct(nameInput.value, costInput.value, categoryInput.value, imageInput.value, descriptionInput.value)" class="text-center">Add Product</button>
+    </div>
+  </div>
